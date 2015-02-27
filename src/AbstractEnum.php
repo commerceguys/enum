@@ -8,11 +8,11 @@ namespace CommerceGuys\Enum;
 abstract class AbstractEnum
 {
     /**
-     * Static cache of available values.
+     * Static cache of available values, shared with all subclasses.
      *
      * @var array
      */
-    protected static $values;
+    protected static $values = [];
 
     private function __construct()
     {
@@ -25,12 +25,13 @@ abstract class AbstractEnum
      */
     public static function getAll()
     {
-        if (!isset(static::$values)) {
-            $reflection = new \ReflectionClass(get_called_class());
-            static::$values = $reflection->getConstants();
+        $class = get_called_class();
+        if (!isset(static::$values[$class])) {
+            $reflection = new \ReflectionClass($class);
+            static::$values[$class] = $reflection->getConstants();
         }
 
-        return static::$values;
+        return static::$values[$class];
     }
 
     /**
