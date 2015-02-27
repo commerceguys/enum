@@ -19,6 +19,7 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::getKey
+     * @uses \CommerceGuys\Enum\AbstractEnum::getAll
      */
     public function testGetKey()
     {
@@ -31,6 +32,7 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::exists
+     * @uses \CommerceGuys\Enum\AbstractEnum::getAll
      */
     public function testExists()
     {
@@ -43,6 +45,8 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::assertExists
+     * @uses \CommerceGuys\Enum\AbstractEnum::getAll
+     * @uses \CommerceGuys\Enum\AbstractEnum::exists
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage "invalid" is not a valid DummyEnum value.
      */
@@ -52,7 +56,10 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::assertAllExists
+     * @covers ::assertAllExist
+     * @uses \CommerceGuys\Enum\AbstractEnum::getAll
+     * @uses \CommerceGuys\Enum\AbstractEnum::exists
+     * @uses \CommerceGuys\Enum\AbstractEnum::assertExists
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage "invalid" is not a valid DummyEnum value.
      */
