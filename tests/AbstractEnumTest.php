@@ -19,6 +19,7 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::getKey
+     *
      * @uses \CommerceGuys\Enum\AbstractEnum::getAll
      */
     public function testGetKey()
@@ -32,6 +33,7 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::exists
+     *
      * @uses \CommerceGuys\Enum\AbstractEnum::getAll
      */
     public function testExists()
@@ -45,6 +47,7 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::assertExists
+     *
      * @uses \CommerceGuys\Enum\AbstractEnum::getAll
      * @uses \CommerceGuys\Enum\AbstractEnum::exists
      * @expectedException \InvalidArgumentException
@@ -57,6 +60,7 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers ::assertAllExist
+     *
      * @uses \CommerceGuys\Enum\AbstractEnum::getAll
      * @uses \CommerceGuys\Enum\AbstractEnum::exists
      * @uses \CommerceGuys\Enum\AbstractEnum::assertExists
@@ -67,5 +71,4 @@ class AbstractEnumTest extends \PHPUnit_Framework_TestCase
     {
         $result = DummyEnum::assertAllExist(['second', 'invalid']);
     }
-
 }

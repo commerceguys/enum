@@ -39,7 +39,7 @@ abstract class AbstractEnum
      *
      * @param string $value The value.
      *
-     * @return boolean The key if found, false otherwise.
+     * @return bool The key if found, false otherwise.
      */
     public static function getKey($value)
     {
@@ -51,7 +51,7 @@ abstract class AbstractEnum
      *
      * @param string $value The value.
      *
-     * @return boolean True if the value is defined, false otherwise.
+     * @return bool True if the value is defined, false otherwise.
      */
     public static function exists($value)
     {
@@ -84,5 +84,4 @@ abstract class AbstractEnum
             static::assertExists($value);
         }
     }
-
 }
