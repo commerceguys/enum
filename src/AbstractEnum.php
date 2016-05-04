@@ -67,7 +67,7 @@ abstract class AbstractEnum
      */
     public static function assertExists($value)
     {
-        if (static::exists($value) == false) {
+        if (static::exists($value) === false) {
             $class = substr(strrchr(get_called_class(), '\\'), 1);
             throw new \InvalidArgumentException(sprintf('"%s" is not a valid %s value.', $value, $class));
         }
